@@ -1,12 +1,8 @@
 import gym
 env = gym.make("FrozenLake-v0")
+env.reset()
 
-num_episodes = 1000
-for i in range(num_episodes):
-    env.reset()
-    done=None
-    while not done:
-        #env.render()
-        action = env.action_space.sample()
-        state, reward, done, _ =env.step(action)
+for _ in range(1000):
     env.render()
+    action = env.action_space.sample()
+    env.step(action)
