@@ -1,5 +1,7 @@
 import gym
 from gym.envs.registration import register
+import numpy as np
+import random
 
 register(
     id='FrozenLake-v3',
@@ -12,12 +14,18 @@ register(
 
 env = gym.make("FrozenLake-v3")
 
+Q = np.zeros([env.observation_space.n, env.action_space.n])
+
+def rargmax(vector):
+    m = np.amax(vector)
+    indices = np.nonzero(vector == m)[0]
+    return random.choice(indices)
+
 num_episodes = 1000
 for i in range(num_episodes):
-    env.reset()
+    state = env.reset()
     done=None
     while not done:
-        #env.render()
-        action = env.action_space.sample()
-        state, reward, done, _ =env.step(action)
-    env.render()
+        action = rargmax(Q[state,:])
+        new_state, reward, done, _ =env.step(action)
+        Q[state,action] = reward + np.max(Q[new_state,:])
