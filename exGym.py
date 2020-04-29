@@ -6,7 +6,7 @@ register(
     entry_point = 'gym.envs.toy_text:FrozenLakeEnv',
     kwargs = {
         'map_name':'4x4',
-        'is_slippery':'False'
+        'is_slippery':False
     }
 )
 
