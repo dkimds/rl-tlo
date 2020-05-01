@@ -21,7 +21,7 @@ num_episodes = 1000
 rList = []
 successRate = []
 
-e = 0.1 # exploit & exploration
+###e = 0.1 # exploit & exploration
 r = 0.9 # discount rate
 
 def rargmax(vector):
@@ -34,11 +34,12 @@ for i in range(num_episodes):   # num_episodes회 학습하고, 업데이트
     total_reward = 0            # 그래프 그리기용(성공: 1, 실패: 0)
     done = None
     while not done:
-        rand = random.random()
-        if (rand < e / (i+1)):
-            action = env.action_space.sample() # 완전 랜덤 선택
-        else:
-            action = rargmax(Q[state,:])
+        # rand = random.random()
+        # if (rand < e / (i+1)):
+        #     action = env.action_space.sample() # 완전 랜덤 선택
+        # else:
+        action = rargmax(
+            Q[state,:] + np.random.random(env.action_space.n)/(i+1))
         new_state, reward, done, _ =env.step(action)
         Q[state,action] = reward + r * np.max(Q[new_state,:])
         total_reward += reward
