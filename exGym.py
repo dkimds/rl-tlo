@@ -39,7 +39,7 @@ for i in range(num_episodes):   # num_episodes회 학습하고, 업데이트
         #     action = env.action_space.sample() # 완전 랜덤 선택
         # else:
         action = rargmax(
-            Q[state,:] + np.random.random(env.action_space.n)/(i+1))
+            Q[state,:] + np.random.rand(env.action_space.n)/(i+1))
         new_state, reward, done, _ =env.step(action)
         Q[state,action] = reward + r * np.max(Q[new_state,:])
         total_reward += reward
