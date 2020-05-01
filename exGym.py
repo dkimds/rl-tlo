@@ -35,7 +35,7 @@ for i in range(num_episodes):   # num_episodes회 학습하고, 업데이트
     done = None
     while not done:
         rand = random.random()
-        if (rand < e):
+        if (rand < e / (i+1)):
             action = env.action_space.sample() # 완전 랜덤 선택
         else:
             action = rargmax(Q[state,:])
