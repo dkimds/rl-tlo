@@ -48,6 +48,7 @@ for i in range(num_episodes):   # num_episodes회 학습하고, 업데이트
         state = new_state
     rList.append(total_reward)                 # 이번 게임에서 보상이 0인지 1인지
     successRate.append(sum(rList)/(i+1))       # 지금까지 성공률 
+env.close()
 
 print("Final Q-Table")
 print(Q)
