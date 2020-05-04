@@ -1,5 +1,5 @@
 # gym_tlo
-TLO Reinforcement Learning Study concentrating on Q-learning.
+TLO reinforcement learning study concentrating on Q-learning.
 
 ## Install Tensorflow2 for CPU-only
 You need to install Anaconda python3, pip3 and virtualenv in advance.
