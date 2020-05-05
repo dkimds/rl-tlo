@@ -9,7 +9,3 @@ You need to install Anaconda python3, pip3 and virtualenv in advance.
     pip install --ignore-installed --upgrade *packageURL*
 
 *packageURL*: https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-2.1.0-cp37-cp37m-macosx_10_9_x86_64.whl
-
-Install the latest Intel® Optimization for TensorFlow from Anaconda Cloud.
-
-    conda install tensorflow-mkl
