@@ -1,0 +1,28 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 0 issues that require attention
+--------------------------------------------------------------------------------
+================================================================================
+Detailed log follows:
+
+================================================================================
+--------------------------------------------------------------------------------
+Processing file 'classification.py'
+ outputting to 'classification.py'
+--------------------------------------------------------------------------------
+
+23:4: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+24:4: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+27:16: INFO: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+53:7: INFO: Added keywords to args of function 'tf.reduce_mean'
+53:23: INFO: Added keywords to args of function 'tf.reduce_sum'
+53:41: INFO: Renamed 'tf.log' to 'tf.math.log'
+55:12: INFO: Renamed 'tf.train.GradientDescentOptimizer' to 'tf.compat.v1.train.GradientDescentOptimizer'
+62:7: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+63:7: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+80:13: INFO: Added keywords to args of function 'tf.argmax'
+81:9: INFO: Added keywords to args of function 'tf.argmax'
+86:11: INFO: Added keywords to args of function 'tf.reduce_mean'
+--------------------------------------------------------------------------------
+
